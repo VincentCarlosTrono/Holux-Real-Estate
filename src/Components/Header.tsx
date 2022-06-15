@@ -30,6 +30,8 @@ const Header = () => {
     });
   }, []);
 
+  const [open, setOpen] = useState(false);
+
   const { darkmode, setDarkmode } = useContext(ThemeContext);
 
   return (
@@ -57,15 +59,15 @@ const Header = () => {
             type="solid"
           ></box-icon>
         </div>
-        <div className="flex gap-14 justify-between items-center">
+        <div className="md:flex hidden gap-14 justify-between items-center">
           <ul className="flex justify-center gap-10 ">
             {headerLists.map((headerList: any) => {
               const { name, path } = headerList;
               return (
                 <a href={path}>
                   <li
-                    className={`text-white hover:text-blue hover:cursor-pointer ${
-                      scroll && "text-lightblack dark:text-lightgray"
+                    className={`text-white hover:text-blue hover:cursor-pointer  ${
+                      scroll && " text-lightblack dark:text-lightgray"
                     }`}
                   >
                     {name}
@@ -93,6 +95,54 @@ const Header = () => {
           <a href="#start">
             <Button name="Subscribe" />
           </a>
+        </div>
+        <div className="md:hidden block">
+          <button
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <box-icon
+              color={scroll ? "blue" : "white"}
+              name="grid-alt"
+            ></box-icon>
+          </button>
+          {open && (
+            <ul className="absolute text-2xl top-16 right-0 text-right px-5 py-10 w-full bg-lightblue">
+              {headerLists.map((headerList: any) => {
+                const { name, path } = headerList;
+                return (
+                  <a href={path}>
+                    <li
+                      onClick={() => {
+                        setOpen(!open);
+                      }}
+                      className={`text-white leading-10 hover:text-blue hover:cursor-pointer${
+                        scroll && "text-lightblack dark:text-lightgray"
+                      }`}
+                    >
+                      {name}
+                    </li>
+                  </a>
+                );
+              })}
+            </ul>
+          )}
+          <button
+            className="px-3"
+            onClick={() => {
+              setDarkmode(!darkmode);
+            }}
+          >
+            {darkmode ? (
+              <box-icon color={scroll ? "blue" : "white"} name="sun"></box-icon>
+            ) : (
+              <box-icon
+                color={scroll ? "blue" : "white"}
+                name="moon"
+              ></box-icon>
+            )}
+          </button>
         </div>
       </div>
     </div>

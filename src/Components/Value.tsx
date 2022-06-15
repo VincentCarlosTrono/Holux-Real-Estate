@@ -36,9 +36,9 @@ const Value = () => {
 
   return (
     <div className="grid-container" id="value">
-      <div className="container flex gap-12 justify-between">
+      <div className="container md:flex md:gap-12 justify-between">
         <div className="dark:bg-gray-900 bg-lightgray rounded-t-full p-5">
-          <div className="rounded-t-full overflow-hidden ">
+          <div className="rounded-t-full  overflow-hidden ">
             <img src={valueImg} alt="valueImage" />
           </div>
         </div>
@@ -51,7 +51,7 @@ const Value = () => {
             detail="We always ready to help by providing the best service for you. We
             believe a good place to live can make your life better."
           />
-          <div className="py-10">
+          <div className="md:py-10 py-5 px-2">
             {markets.map((market: any) => {
               const { text, icon, description } = market;
               return (
@@ -59,7 +59,7 @@ const Value = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex gap-3 items-center">
                       {icon}
-                      <h1 className="text-darkblue dark:text-lightgray text-xl font-semibold py-5">
+                      <h1 className="text-darkblue dark:text-lightgray text-sm md:text-xl font-semibold py-5">
                         {text}
                       </h1>
                     </div>
@@ -69,7 +69,7 @@ const Value = () => {
                         setOpen(!open);
                       }}
                     >
-                      <div className="bg-darkblue h-6">
+                      <div className="bg-lightgray dark:bg-darkblue h-6">
                         <box-icon color="blue" name="caret-down"></box-icon>
                       </div>
                     </button>

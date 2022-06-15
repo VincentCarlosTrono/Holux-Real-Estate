@@ -31,8 +31,13 @@ const Contact = () => {
   ];
 
   return (
-    <div className="grid-container py-40 rounded-md" id="contact">
-      <div className="container flex justify-between gap-10 ">
+    <div className="grid-container pt-20 md:py-40 rounded-md" id="contact">
+      <div className="container md:flex justify-between gap-10 ">
+        <div className="p-5 md:hidden block rounded-t-full  bg-lightgray dark:bg-darkblue">
+          <div className="rounded-t-full  overflow-hidden ">
+            <img src={contact} alt="contactImage" />
+          </div>
+        </div>
         <div>
           <Title
             title="Contact Us"
@@ -45,20 +50,21 @@ const Contact = () => {
               const { icon, contact, number, button } = contactCard;
               return (
                 <div className="shadow-md p-5 hover:shadow-xl dark:shadow-darkblue">
-                  <div className="flex items-center gap-3 pb-10">
+                  <div className="md:flex items-center gap-3 md:pb-10">
                     <div className="bg-lightgray p-2 rounded-xl dark:bg-darkblue">
-                      {" "}
                       {icon}
                     </div>
 
-                    <div className="text-left ">
+                    <div className="md:text-left text-center py-3">
                       <h1 className="dark:text-lightgray  font-semibold">
                         {contact}
                       </h1>
-                      <h1 className="text-gray-400">{number}</h1>
+                      <h1 className="text-gray-400 text-sm md:text-md">
+                        {number}
+                      </h1>
                     </div>
                   </div>
-                  <button className="bg-lightgray dark:bg-darkblue py-4 px-7 text-blue text-center font-semibold hover:bg-blue hover:text-white rounded-md">
+                  <button className="bg-lightgray w-full dark:bg-darkblue py-4 text-sm md:text-md md:px-7 text-blue text-center font-semibold hover:bg-blue hover:text-white rounded-md">
                     {button}
                   </button>
                 </div>
@@ -66,7 +72,7 @@ const Contact = () => {
             })}
           </div>
         </div>
-        <div className="bg-lightgray dark:bg-gray-900 p-5 rounded-t-full">
+        <div className="bg-lightgray dark:bg-gray-900 p-5 rounded-t-full md:block hidden">
           <div className="rounded-t-full overflow-hidden">
             <img src={contact} alt="contactImage" />
           </div>

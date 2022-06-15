@@ -50,7 +50,7 @@ const Residences = () => {
       <div className="container">
         <Title title="Best Choices" subtitle="Popular Residences" dot="." />
 
-        <div className="grid grid-cols-3 gap-14 p-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 p-10">
           {houses.map((house: any) => {
             const { image, price, name, description } = house;
             return (

@@ -23,7 +23,7 @@ const Feature = () => {
   return (
     <div className="grid-container">
       <div className="container">
-        <div className="flex py-32  gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 py-10 md:py-32  gap-10">
           {logos.map((logo: any) => {
             const { image } = logo;
             return (
