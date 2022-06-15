@@ -26,13 +26,13 @@ const Header = () => {
 
   return (
     <div
-      className={`grid-container fixed w-full text-white ${
+      className={`grid-container fixed w-full text-white z-10 ${
         scroll && "bg-white shadow-md text-black"
       }`}
     >
       <div className="container flex justify-between py-5 items-center text-lg font-semibold">
         <div className="flex items-center gap-2">
-          <h1 className=""> Holux</h1>
+          <h1 className="hover:text-blue"> Holux</h1>
           <box-icon
             color={scroll ? "black" : "white"}
             name="building-house"

@@ -1,8 +1,11 @@
 import React from "react";
 import "./App.css";
+import Contact from "./Components/Contact";
 import Feature from "./Components/Feature";
 import Header from "./Components/Header";
 import Hero from "./Components/Hero";
+import Residences from "./Components/Residences";
+import Value from "./Components/Value";
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       <Header />
       <Hero />
       <Feature />
+      <Residences />
+      <Value />
+      <Contact />
     </div>
   );
 }

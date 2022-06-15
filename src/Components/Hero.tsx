@@ -19,7 +19,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="grid-container pt-72 bg-black">
+    <div className="grid-container pt-80 bg-black">
       <div className="container">
         <div className=" flex gap-44 items-center">
           <div>
@@ -63,8 +63,10 @@ const Hero = () => {
               })}
             </div>
           </div>
-          <div className="rounded-t-full overflow-hidden shadow-2xl shadow-gray-500 opacity-100 -mb-10">
-            <img src={home} alt="home" />
+          <div className="p-5 bg-lightgray rounded-t-full">
+            <div className="rounded-t-full overflow-hidden shadow-2xl  opacity-100 -mb-10">
+              <img src={home} alt="home" />
+            </div>
           </div>
         </div>
       </div>
