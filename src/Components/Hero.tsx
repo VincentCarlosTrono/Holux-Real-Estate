@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <div
-      className="grid-container pt-28 md:pt-80 bg-gradient-to-tl from-lightblack to-darkblue"
+      className="grid-container pt-28 md:pt-52 bg-gradient-to-tl from-lightblack to-darkblue"
       id="#"
     >
       <div className="container">
@@ -71,7 +71,7 @@ const Hero = () => {
             className="p-5  bg-lightgray rounded-t-full   block"
             data-aos="fade-left"
           >
-            <div className="rounded-t-full  overflow-hidden shadow-2xl   opacity-100 -mb-10">
+            <div className="rounded-t-full  overflow-hidden shadow-2xl   opacity-100 -mb-14">
               <img className="md:h-full h-80 w-full" src={home} alt="home" />
             </div>
           </div>
