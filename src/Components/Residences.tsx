@@ -47,14 +47,17 @@ const Residences = () => {
 
   return (
     <div className="grid-container py-16" id="residences">
-      <div className="container">
+      <div className="container" data-aos="fade-right">
         <Title title="Best Choices" subtitle="Popular Residences" dot="." />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-14 p-10">
           {houses.map((house: any) => {
             const { image, price, name, description } = house;
             return (
-              <div className="p-5 dark:hover:shadow-darkblue hover:shadow-xl rounded-md hover:cursor-pointer">
+              <div
+                className="p-5 dark:hover:shadow-darkblue hover:shadow-xl rounded-md hover:cursor-pointer "
+                data-aos="fade-left"
+              >
                 <div className="rounded-xl overflow-hidden">
                   <img src={image} alt="houseImages" />
                 </div>

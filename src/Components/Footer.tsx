@@ -34,7 +34,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="grid-container py-14 md:py-28">
+    <div className="grid-container py-14 md:py-28" data-aos="fade-up">
       <div className="container">
         <div className=" md:flex  justify-between">
           <div className="">

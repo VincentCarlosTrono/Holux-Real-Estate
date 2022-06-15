@@ -37,13 +37,16 @@ const Value = () => {
   return (
     <div className="grid-container" id="value">
       <div className="container md:flex md:gap-12 justify-between">
-        <div className="dark:bg-gray-900 bg-lightgray rounded-t-full p-5">
+        <div
+          className="dark:bg-gray-900 bg-lightgray rounded-t-full p-5"
+          data-aos="fade-right"
+        >
           <div className="rounded-t-full  overflow-hidden ">
             <img src={valueImg} alt="valueImage" />
           </div>
         </div>
 
-        <div>
+        <div data-aos="fade-left">
           <Title
             title="Our Value"
             subtitle="Value We Give To You"

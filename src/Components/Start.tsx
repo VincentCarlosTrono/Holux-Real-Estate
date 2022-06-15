@@ -2,7 +2,11 @@ import React from "react";
 
 const Start = () => {
   return (
-    <div className="grid-container py-14 md:py-28" id="start">
+    <div
+      className="grid-container py-14 md:py-28"
+      id="start"
+      data-aos="fade-up"
+    >
       <div className="container bg-lightblue dark:bg-gray-700 p-3 rounded-3xl">
         <div className="text-center bg-blue dark:bg-darkblue py-10 md:py-20 rounded-3xl">
           <h1 className="md:text-5xl text-2xl font-semibold  text-white">

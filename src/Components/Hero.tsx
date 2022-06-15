@@ -25,7 +25,7 @@ const Hero = () => {
     >
       <div className="container">
         <div className="block md:flex gap-44 items-center">
-          <div>
+          <div data-aos="fade-right">
             <h1 className="md:text-7xl text-5xl max-w-md md:max-w-lg font-bold py-10 text-white">
               Discover Most Suitable Property
             </h1>
@@ -67,7 +67,10 @@ const Hero = () => {
               })}
             </div>
           </div>
-          <div className="p-5  bg-lightgray rounded-t-full  block">
+          <div
+            className="p-5  bg-lightgray rounded-t-full   block"
+            data-aos="fade-left"
+          >
             <div className="rounded-t-full  overflow-hidden shadow-2xl   opacity-100 -mb-10">
               <img className="md:h-full h-80 w-full" src={home} alt="home" />
             </div>

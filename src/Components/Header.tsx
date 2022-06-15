@@ -36,11 +36,11 @@ const Header = () => {
 
   return (
     <div
-      className={`grid-container fixed w-full text-white z-10 ${
-        scroll && "dark:bg-lightblack bg-white shadow-md text-darkblue"
+      className={`grid-container sticky top-0 w-full bg-darkblue  text-white z-10 ${
+        scroll && "dark:bg-lightblack text-blue bg-white shadow-md "
       }`}
     >
-      <div className="container flex justify-between py-5 items-center text-lg font-semibold">
+      <div className="container max-w-full flex justify-between py-5 items-center text-lg font-semibold">
         <div className="flex items-center gap-2">
           <a href="#">
             <h1
