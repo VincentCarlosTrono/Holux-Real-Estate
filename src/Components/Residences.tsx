@@ -46,7 +46,7 @@ const Residences = () => {
   ];
 
   return (
-    <div className="grid-container py-16">
+    <div className="grid-container py-16" id="residences">
       <div className="container">
         <Title title="Best Choices" subtitle="Popular Residences" dot="." />
 
@@ -54,7 +54,7 @@ const Residences = () => {
           {houses.map((house: any) => {
             const { image, price, name, description } = house;
             return (
-              <div className="p-5 hover:shadow-xl rounded-md hover:cursor-pointer">
+              <div className="p-5 dark:hover:shadow-darkblue hover:shadow-xl rounded-md hover:cursor-pointer">
                 <div className="rounded-xl overflow-hidden">
                   <img src={image} alt="houseImages" />
                 </div>
@@ -63,10 +63,10 @@ const Residences = () => {
                   <h1 className="text-gray-500 ">{price}</h1>
                 </div>
 
-                <h3 className="py-2 text-xl font-semibold text-darkblue">
+                <h3 className="py-2 text-xl font-semibold text-darkblue dark:text-lightgray ">
                   {name}
                 </h3>
-                <p className="text-gray-500">{description}</p>
+                <p className="text-gray-400">{description}</p>
               </div>
             );
           })}

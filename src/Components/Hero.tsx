@@ -19,14 +19,17 @@ const Hero = () => {
   ];
 
   return (
-    <div className="grid-container pt-80 bg-black">
+    <div
+      className="grid-container pt-80 bg-gradient-to-tl from-lightblack to-darkblue"
+      id="#"
+    >
       <div className="container">
         <div className=" flex gap-44 items-center">
           <div>
             <h1 className="text-7xl max-w-lg font-bold py-10 text-white">
               Discover Most Suitable Property
             </h1>
-            <p className="max-w-sm text-md text-gray-500">
+            <p className="max-w-sm text-md text-gray-400">
               Find a variety of properties that suit you very easily, forget all
               difficulties in finding a resindence for you.
             </p>
@@ -57,13 +60,13 @@ const Hero = () => {
                       </p>
                     </div>
 
-                    <p className="text-gray-500 max-w-xs">{text}</p>
+                    <p className="text-gray-400 max-w-xs ">{text}</p>
                   </div>
                 );
               })}
             </div>
           </div>
-          <div className="p-5 bg-lightgray rounded-t-full">
+          <div className="p-5  bg-lightgray rounded-t-full">
             <div className="rounded-t-full overflow-hidden shadow-2xl  opacity-100 -mb-10">
               <img src={home} alt="home" />
             </div>

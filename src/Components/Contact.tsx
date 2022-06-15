@@ -31,7 +31,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="grid-container py-40 rounded-md">
+    <div className="grid-container py-40 rounded-md" id="contact">
       <div className="container flex justify-between gap-10 ">
         <div>
           <Title
@@ -44,16 +44,21 @@ const Contact = () => {
             {contactCards.map((contactCard: any) => {
               const { icon, contact, number, button } = contactCard;
               return (
-                <div className="shadow-md p-5 hover:shadow-xl">
+                <div className="shadow-md p-5 hover:shadow-xl dark:shadow-darkblue">
                   <div className="flex items-center gap-3 pb-10">
-                    <div className="bg-lightgray p-2 rounded-xl"> {icon}</div>
+                    <div className="bg-lightgray p-2 rounded-xl dark:bg-darkblue">
+                      {" "}
+                      {icon}
+                    </div>
 
                     <div className="text-left ">
-                      <h1>{contact}</h1>
-                      <h1>{number}</h1>
+                      <h1 className="dark:text-lightgray  font-semibold">
+                        {contact}
+                      </h1>
+                      <h1 className="text-gray-400">{number}</h1>
                     </div>
                   </div>
-                  <button className="bg-lightgray py-2 px-8 text-blue text-center rounded-md">
+                  <button className="bg-lightgray dark:bg-darkblue py-4 px-7 text-blue text-center font-semibold hover:bg-blue hover:text-white rounded-md">
                     {button}
                   </button>
                 </div>
@@ -61,7 +66,7 @@ const Contact = () => {
             })}
           </div>
         </div>
-        <div className="bg-lightgray p-5 rounded-t-full">
+        <div className="bg-lightgray dark:bg-gray-900 p-5 rounded-t-full">
           <div className="rounded-t-full overflow-hidden">
             <img src={contact} alt="contactImage" />
           </div>

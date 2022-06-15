@@ -27,7 +27,7 @@ const Feature = () => {
           {logos.map((logo: any) => {
             const { image } = logo;
             return (
-              <div className="hover:opacity-100 opacity-40">
+              <div className="hover:opacity-100 opacity-50">
                 <img src={image} alt="logos" />
               </div>
             );
