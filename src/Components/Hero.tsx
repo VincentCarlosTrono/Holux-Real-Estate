@@ -1,23 +1,9 @@
 import React from "react";
-import home from "../Media/img/home.jpg";
 import Button from "./button";
+import Subscription from "./Subscription";
+import home from "../Media/img/home.jpg";
 
 const Hero = () => {
-  const subscriptions = [
-    {
-      total: "9K",
-      text: "Premium Products",
-    },
-    {
-      total: "2K",
-      text: "Happy Customer",
-    },
-    {
-      total: "28K",
-      text: "Awards Winning",
-    },
-  ];
-
   return (
     <div
       className="grid-container pt-28 md:pt-52 bg-gradient-to-tl from-lightblack to-darkblue"
@@ -47,25 +33,7 @@ const Hero = () => {
                 <Button name="Search" />
               </div>
             </div>
-            <div className="flex md:gap-10 py-5">
-              {subscriptions.map((subscription: any) => {
-                const { total, text } = subscription;
-                return (
-                  <div>
-                    <div className="flex">
-                      <h1 className="md:text-4xl text-2xl font-semibold text-white">
-                        {total}
-                      </h1>
-                      <p className="md:text-4xl text-2xl font-semibold text-orange-600">
-                        +
-                      </p>
-                    </div>
-
-                    <p className="text-gray-400 md:max-w-xs ">{text}</p>
-                  </div>
-                );
-              })}
-            </div>
+            <Subscription />
           </div>
           <div
             className="p-5  bg-lightgray rounded-t-full   block"

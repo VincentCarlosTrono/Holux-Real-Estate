@@ -1,38 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState, useContext } from "react";
-import Button from "./button";
 import { ThemeContext } from "../ContextAPI/ThemeContext";
+import HeaderNavLists from "./HeaderNavLists";
+import Logo from "./Logo";
+import MenuList from "./MenuList";
 
 const Header = () => {
-  const headerLists = [
-    {
-      name: "Home",
-      path: "#",
-    },
-    {
-      name: "Residences",
-      path: "#residences",
-    },
-    {
-      name: "Value",
-      path: "#value",
-    },
-    {
-      name: "Contact",
-      path: "#contact",
-    },
-  ];
-
   const [scroll, setScroll] = useState(0);
+  const [open, setOpen] = useState(false);
+  const { darkmode, setDarkmode } = useContext(ThemeContext);
+
   useEffect(() => {
     document.addEventListener("scroll", () => {
       setScroll(window.scrollY);
     });
   }, []);
-
-  const [open, setOpen] = useState(false);
-
-  const { darkmode, setDarkmode } = useContext(ThemeContext);
 
   return (
     <div
@@ -41,61 +22,8 @@ const Header = () => {
       }`}
     >
       <div className="container max-w-full flex justify-between py-5 items-center text-lg font-semibold">
-        <div className="flex items-center gap-2">
-          <a href="#">
-            <h1
-              className={
-                scroll
-                  ? "text-blue hover:text-lightblue hover:cursor-pointer"
-                  : "white hover:cursor-pointer hover:text-blue"
-              }
-            >
-              Holux
-            </h1>
-          </a>
-          <box-icon
-            color={scroll ? "blue" : "white"}
-            name="home-alt-2"
-            type="solid"
-          ></box-icon>
-        </div>
-        <div className="md:flex hidden gap-14 justify-between items-center">
-          <ul className="flex justify-center gap-10 ">
-            {headerLists.map((headerList: any) => {
-              const { name, path } = headerList;
-              return (
-                <a href={path}>
-                  <li
-                    className={`text-white hover:text-blue hover:cursor-pointer  ${
-                      scroll && " text-lightblack dark:text-lightgray"
-                    }`}
-                  >
-                    {name}
-                  </li>
-                </a>
-              );
-            })}
-          </ul>
-          <button
-            className="px-3"
-            onClick={() => {
-              setDarkmode(!darkmode);
-            }}
-          >
-            {darkmode ? (
-              <box-icon color={scroll ? "blue" : "white"} name="sun"></box-icon>
-            ) : (
-              <box-icon
-                color={scroll ? "blue" : "white"}
-                name="moon"
-              ></box-icon>
-            )}
-          </button>
-
-          <a href="#start">
-            <Button name="Subscribe" />
-          </a>
-        </div>
+        <Logo scroll={scroll} />
+        <HeaderNavLists />
         <div className="md:hidden block">
           <button
             onClick={() => {
@@ -107,27 +35,7 @@ const Header = () => {
               name="grid-alt"
             ></box-icon>
           </button>
-          {open && (
-            <ul className="absolute text-2xl top-16 right-0 text-right px-5 py-10 w-full bg-lightblue">
-              {headerLists.map((headerList: any) => {
-                const { name, path } = headerList;
-                return (
-                  <a href={path}>
-                    <li
-                      onClick={() => {
-                        setOpen(!open);
-                      }}
-                      className={`text-white leading-10 hover:text-blue hover:cursor-pointer${
-                        scroll && "text-lightblack dark:text-lightgray"
-                      }`}
-                    >
-                      {name}
-                    </li>
-                  </a>
-                );
-              })}
-            </ul>
-          )}
+          <MenuList open={open} setOpen={setOpen} scroll={scroll} />
           <button
             className="px-3"
             onClick={() => {
